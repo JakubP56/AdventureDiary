@@ -5,11 +5,12 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import userRouter from "./routes/UserRouters";
 import postRouter from "./routes/postRouter";
+import cors from 'cors';
 
 const app = express();
 dotenv.config();
 
-
+app.use(cors());
 app.use(express.json());
 app.use("/user", userRouter)
 app.use("/posts", postRouter)

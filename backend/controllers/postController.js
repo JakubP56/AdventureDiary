@@ -91,14 +91,14 @@ export const getPostById = async(req,res) => {
 
 export const updatePost = async(req,res) => {
     const id = req.params.id;
-    const {title, description, location, date, image} = req.body;
+    const {title, description, location, image} = req.body;
 
     //validations
     if(!title && title.trim()==="" &&
         !description && 
         description.trim()==="" &&
         !location && location.trim()==="" &&
-        !date  && !image && image.trim()==="")
+        !image && image.trim()==="")
         {
             return res.status(422).json({message: "Invalid Data"});
         }
@@ -106,7 +106,7 @@ export const updatePost = async(req,res) => {
     let post;
     try{
         post = await postModel.findByIdAndUpdate(id,{
-            title,description,image,date: new Date(`${date}`),location,
+            title,description,image,location,
         });
     }
     catch(err){
