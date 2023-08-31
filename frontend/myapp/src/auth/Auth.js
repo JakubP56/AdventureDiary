@@ -6,7 +6,7 @@ import { authActions } from '../store';
 
 const Auth = () => {
 const dispatch = useDispatch();
-const [isSignedUp, setSignUp] = useState(false);
+const [isSignedUp, setSignUp] = useState(true);
 const handleSubmit = (e) => {
   e.preventDefault();
   console.log(inputs);
@@ -50,8 +50,7 @@ const handleChange = (e) => {
           <TextField onChange={handleChange} value= {inputs.email} name = "email" required margin='normal'/>
           <FormLabel>Password</FormLabel>
           <TextField onChange={handleChange} value= {inputs.password} name = "password" required margin='normal'/>
-          <Button sx={{mt:1}}variant='contained'>{isSignedUp? "Sign Up" : "Log In"}</Button>
-          <Button onClick={()=>setSignUp(!isSignedUp)} sx={{mt:1}} type="submit" variant='outlined'>Go to {isSignedUp ? "Log In": "Sign Up"}</Button>
+          <Button onClick={()=>setSignUp(!isSignedUp)} sx={{mt:1}} type="submit" variant='outlined'>{isSignedUp ? "Sign Up": "Log In"}</Button>
         </Box>
       </form>
     </Box>

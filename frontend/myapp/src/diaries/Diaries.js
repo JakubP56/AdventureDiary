@@ -19,7 +19,7 @@ const Diaries = () => {
     alignItems={"center"}>
 
     { posts && posts.map((item,index)=><DiaryItem 
-    date={new Date(`${item.date}`).toLocaleDateString()}
+   
     description={item.description} 
     image={item.image}
     id={item._id}
