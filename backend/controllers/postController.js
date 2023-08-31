@@ -27,8 +27,7 @@ export const addPost = async(req,res) => {
     if(!title && title.trim()==="" &&
         !description && 
         description.trim()==="" &&
-        !location && location.trim()==="" &&
-        !date && !user && !image && image.trim()==="")
+        !location && location.trim()===""  && !user && !image && image.trim()==="")
         {
             return res.status(422).json({message: "Invalid Data"});
         }

@@ -14,9 +14,6 @@ const Home = () => {
           Share Your Diary With Us!
         </Typography>
         <Box margin="auto">
-          <Button variant='outlined' sx={{mr:2 }}>
-            Share Your Adventure
-          </Button>
           <Button LinkComponent={Link} to="/diaries" variant='contained' sx={{ml:2 }}>
             View Diary Entries
           </Button>

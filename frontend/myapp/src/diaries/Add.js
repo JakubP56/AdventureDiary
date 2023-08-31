@@ -1,6 +1,8 @@
 import { Box, Button, FormLabel, TextField, Typography } from '@mui/material'
+import EventEmitter from 'events';
 import React, { useState } from 'react'
 import { addPost } from '../api-helpers/helpers';
+
 
 const Add = () => {
     const [inputs, setinputs] = useState({title: "", description:"", location:"",imageUrl:"" ,date:""});
@@ -32,8 +34,7 @@ const Add = () => {
                 <TextField onChange={handleChange} name='imageUrl' value={inputs.imageUrl} margin='normal'/>
                 <FormLabel>Location</FormLabel>
                 <TextField onChange={handleChange} name='location' value={inputs.location}  margin='normal'/>
-                <FormLabel>Date</FormLabel>
-                <TextField type='date' onChange={handleChange} name='date' value={inputs.date}  margin='normal'/>
+                
                 <Button type='submit' variant='contained'>Post To Diary</Button>
             </Box>
 

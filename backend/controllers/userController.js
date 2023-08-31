@@ -78,3 +78,20 @@ if(!isPassCorrect){
 return res.status(200).json({id: existingUser._id, message: "Login Successfull. Welcome Back!"});
 
 };
+
+export const getUserById = async(req,res) => {
+    const id = req.params.id;
+
+    let user;
+    try{
+        user = await User.findById(id).populate("posts");
+    }
+    catch(err){
+        return console.log(err);
+    }
+    if(!user) {
+        return res.status(404).json({message: "No User Found"});
+    }
+    return res.status(200).json({user});
+
+}
